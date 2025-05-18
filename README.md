@@ -1,22 +1,23 @@
 # 🚀 My Portfolio Website
 
-Welcome to the repository for my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through jaw-dropping 3D animations, slick interactions, and fluid motion. If you're into creative web design, you're in the right place.
+Welcome to my personal portfolio website! This is where I showcase my skills, projects, and a bit of my personality through interactive web experiences and innovative solutions. I'm a B.Tech ECE student passionate about building useful applications that solve real-world problems.
 
-![Portfolio Preview](https://github.com/Naresh-Khatri/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
+![Portfolio Preview](https://github.com/satish024-024/Portfolio/blob/main/public/assets/projects-screenshots/portfolio/landing.png?raw=true)
 
 ## 🔥 Features
 
-- **3D Animations**: Custom-made interactive keyboard using Spline with skills as keycaps that reveal titles and descriptions on hover.
-- **Slick Interactions**: Powered by GSAP and Framer Motion for smooth animations on scroll, hover, and element reveal.
-- **Space Theme**: Particles on a dark background to simulate a cosmic environment, making the experience out of this world.
-- **Responsive Design**: Fully responsive across all devices to ensure the best user experience.
-- **Innovative Web Design**: Combining creativity with functionality to push the boundaries of modern web design.
+- **Interactive Projects**: Showcase of my mobile apps, IoT projects, and web applications
+- **Skills Showcase**: Interactive display of my technical skills and expertise
+- **Responsive Design**: Fully responsive across all devices for the best user experience
+- **Modern UI**: Clean and professional design with smooth animations
+- **Project Details**: In-depth information about each project with screenshots and features
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js, React, Tailwind CSS, Shadcn, Aceternity UI
-- **Animations**: GSAP, Framer Motion, Spline Runtime
-- **Misc**: Resend, Socketio, Zod
+- **Frontend**: React, React Native, Flutter, Tailwind CSS
+- **Backend**: Python, Firebase, Supabase
+- **Tools**: VS Code, Git, GitHub
+- **Other**: IoT, Machine Learning (Beginner)
 
 ## 🚀 Getting Started
 
@@ -30,7 +31,7 @@ Welcome to the repository for my personal portfolio website! This is where I sho
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/Naresh-Khatri/Portfolio.git
+    git clone https://github.com/satish024-024/Portfolio.git
     ```
 
 2. Navigate to the project directory:
@@ -59,16 +60,16 @@ Welcome to the repository for my personal portfolio website! This is where I sho
 
 ## 🚀 Deployment
 
-This site is deployed on Vercel. For your own deployment, follow these steps:
+This site is deployed on GitHub Pages. For your own deployment, follow these steps:
 
-1. Push your code to a GitHub repository.
-2. Connect your repository to Vercel.
-3. Vercel will handle the deployment process.
+1. Push your code to a GitHub repository
+2. Enable GitHub Pages in your repository settings
+3. Your site will be available at `https://yourusername.github.io/Portfolio`
 
 ## 🤝 Contributing
 
 If you'd like to contribute or suggest improvements, feel free to open an issue or submit a pull request. All contributions are welcome!
 
-## 📄 License
+## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).

@@ -33,17 +33,19 @@ const BASE_PATH = "/assets/projects-screenshots";
 const ProjectsLinks = ({ live, repo }: { live: string; repo?: string }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-start gap-3 my-3 mb-8">
-      <Link
-        className="font-mono underline flex gap-2"
-        rel="noopener"
-        target="_new"
-        href={live}
-      >
-        <Button variant={"default"} size={"sm"}>
-          Visit Website
-          <ArrowUpRight className="ml-3 w-5 h-5" />
-        </Button>
-      </Link>
+      {live && (
+        <Link
+          className="font-mono underline flex gap-2"
+          rel="noopener"
+          target="_new"
+          href={live}
+        >
+          <Button variant={"default"} size={"sm"}>
+            Visit Website
+            <ArrowUpRight className="ml-3 w-5 h-5" />
+          </Button>
+        </Link>
+      )}
       {repo && (
         <Link
           className="font-mono underline flex gap-2"
@@ -187,7 +189,13 @@ const PROJECT_SKILLS = {
     icon: <SiVuedotjs />,
   },
   react: {
-    title: "React.js",
+    title: "React",
+    bg: "black",
+    fg: "white",
+    icon: <RiReactjsFill />,
+  },
+  react_native: {
+    title: "React Native",
     bg: "black",
     fg: "white",
     icon: <RiReactjsFill />,
@@ -233,106 +241,69 @@ export type Project = {
   content: React.ReactNode | any;
   github?: string;
   live: string;
+  resume?: string;
 };
 const projects: Project[] = [
   {
-    id: "codingducks",
-    category: "Coding platform",
-    title: "Coding Ducks",
-    src: "/assets/projects-screenshots/codingducks/landing.png",
-    screenshots: ["landing.png"],
+    id: "meals-mitra",
+    category: "Food Sharing Platform",
+    title: "Meals Mitra App",
+    src: "/assets/projects-screenshots/meals-mitra/MEALSMITRA.jpg",
+    screenshots: [
+      "/assets/projects-screenshots/meals-mitra/MEALSMITRA.jpg",
+      "/assets/projects-screenshots/meals-mitra/homescreen.jpg",
+      "/assets/projects-screenshots/meals-mitra/food donate screen.jpg",
+      "/assets/projects-screenshots/meals-mitra/food request screen.jpg",
+      "/assets/projects-screenshots/meals-mitra/profile screen.jpg",
+      "/assets/projects-screenshots/meals-mitra/app drawer.jpg"
+    ],
     skills: {
-      frontend: [
-        PROJECT_SKILLS.ts,
-        PROJECT_SKILLS.next,
-        PROJECT_SKILLS.chakra,
-        PROJECT_SKILLS.reactQuery,
-        PROJECT_SKILLS.firebase,
-      ],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.prisma,
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.sockerio,
-      ],
+      frontend: [PROJECT_SKILLS.react_native],
+      backend: [PROJECT_SKILLS.firebase],
     },
-    live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
+    github: "https://github.com/satish024-024/meals-mitra",
+    live: "https://meals-mitra.app",
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Coding ducks = LeetCode + CodePen + CSS Battles
+            Meals Mitra – Food Sharing Platform
           </TypographyP>
           <TypographyP className="font-mono ">
-            Coding Ducks is your coding dojo — where you level up your skills,
-            battle in real-time code duels, and earn badges like a true code
-            warrior. Track your progress, flex your brain, and climb the
-            leaderboard. Ready to quack the code?
+            Meals Mitra is an AI-powered food redistribution platform that connects donors and volunteers to deliver leftover food to people in need. The app streamlines the process of donating and requesting food, making it easy for anyone to contribute to the community and reduce food waste.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">Problems </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Onboarding & Mission</TypographyH3>
           <p className="font-mono mb-2">
-            Solve coding problems similar to LeetCode, enhancing your
-            problem-solving skills across various languages.
+            The onboarding screen welcomes users and introduces the mission of Meals Mitra: to make food sharing simple, impactful, and accessible for everyone.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/problems.png`,
-              `${BASE_PATH}/codingducks/problem.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Ducklets</TypographyH3>
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/MEALSMITRA.jpg"]} />
+          <TypographyH3 className="my-4 mt-8">Home & Community Impact</TypographyH3>
           <p className="font-mono mb-2">
-            Collaborate in real-time with others in a multiplayer coding
-            environment, just like CodePen but with a social twist.
+            The home screen provides quick access to key actions like donating food, requesting food, viewing the map, and managing your profile. It also highlights urgent community needs and shows real-time impact statistics such as meals donated and people helped.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/ducklets.png`,
-              `${BASE_PATH}/codingducks/ducklet1.png`,
-              `${BASE_PATH}/codingducks/ducklet2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">UI Battles </TypographyH3>
-
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/homescreen.jpg"]} />
+          <TypographyH3 className="my-4 mt-8">Donating Food</TypographyH3>
           <p className="font-mono mb-2">
-            Challenge yourself to create UI components with HTML/CSS/JS, and get
-            instant feedback with an automated similarity scoring.
+            Donors can easily submit food donations by specifying the food type, quantity, description, and pickup location. The app encourages community participation and tracks the positive impact of each donation.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/css-battles.png`,
-              `${BASE_PATH}/codingducks/css-battle.png`,
-              `${BASE_PATH}/codingducks/css-battle2.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 mt-8">Contests </TypographyH3>
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/food donate screen.jpg"]} />
+          <TypographyH3 className="my-4 mt-8">Requesting Food</TypographyH3>
           <p className="font-mono mb-2">
-            Organize or participate in coding competitions. Successfully used to
-            host three contests during college.
+            Individuals or organizations in need can request food by providing details such as title, description, quantity, and location. The process is simple and transparent, ensuring help reaches those who need it most.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/contests.png`]} />
-          <TypographyH3 className="my-4 mt-8">Playground </TypographyH3>
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/food request screen.jpg"]} />
+          <TypographyH3 className="my-4 mt-8">User Profile</TypographyH3>
           <p className="font-mono mb-2">
-            Test and execute your code instantly in my versatile online code
-            runner.
+            Each user has a profile section displaying their contact information, address, gender, and recent donation activity. Users can easily update their details and track their contributions.
           </p>
-          <SlideShow images={[`${BASE_PATH}/codingducks/playground.png`]} />
-          <TypographyH3 className="my-4 mt-8">Users</TypographyH3>
-
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/profile screen.jpg"]} />
+          <TypographyH3 className="my-4 mt-8">App Navigation & Features</TypographyH3>
           <p className="font-mono mb-2">
-            Track your progress, earn badges, and climb the rankings with
-            detailed user profiles and activity tracking.
+            The app drawer provides access to all major features, including donation tracking, volunteer dashboard, NGO bulk requests, volunteer pickup, request status tracking, and community engagement. Dark mode support ensures a comfortable experience for all users.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/codingducks/users.png`,
-              `${BASE_PATH}/codingducks/user.png`,
-            ]}
-          />
+          <SlideShow images={["/assets/projects-screenshots/meals-mitra/app drawer.jpg"]} />
         </div>
       );
     },
@@ -359,6 +330,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.docker,
       ],
     },
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content(): JSX.Element {
       return (
         <div>
@@ -444,6 +416,7 @@ const projects: Project[] = [
       ],
       backend: [PROJECT_SKILLS.sanity],
     },
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content() {
       return (
         <div>
@@ -498,10 +471,10 @@ const projects: Project[] = [
     id: "portfolio",
     category: "Portfolio",
     title: "My Portfolio",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
-    screenshots: ["1.png"],
+    src: "/assets/projects-screenshots/portfolio/my portfolio.png",
+    screenshots: ["/assets/projects-screenshots/portfolio/my portfolio.png"],
     live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
+    github: "https://github.com/Naresh-Khatri/Portfolio",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
@@ -514,48 +487,19 @@ const projects: Project[] = [
       ],
       backend: [],
     },
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            Welcome to my digital playground, where creativity meets code in the
-            dopest way possible.
+            This is my personal portfolio website, designed to showcase my skills, projects, and experience in a visually engaging and interactive way. The site features a modern UI, smooth animations, and a responsive layout, making it easy for visitors to explore my work and get in touch.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Beautiful 3D Objects{" "}
-          </TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Portfolio Overview</TypographyH3>
           <p className="font-mono mb-2">
-            Did you see that 3D keyboard modal? Yeah! I made that. That
-            interactive keyboard is being rendered in 3D on a webpage 🤯, and
-            pressing each keycap reveals a skill in a goofy way. It&apos;s like
-            typing, but make it art.
+            The screenshot below highlights the main landing page of my portfolio, featuring a clean design, easy navigation, and quick access to my top projects and contact information.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
-          <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
-          <p className="font-mono mb-2">
-            Dark background + floating particles = out-of-this-world cool.
-          </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
-          <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
-
-          <p className="font-mono mb-2">
-            My top personal and freelance projects — no filler, all killer.
-          </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
-          <p className="font-mono mb-2 mt-8 text-center">
-            This site&apos;s not just a portfolio — it&apos;s a whole vibe.
-          </p>
+          <SlideShow images={["/assets/projects-screenshots/portfolio/my portfolio.png"]} />
         </div>
       );
     },
@@ -572,6 +516,7 @@ const projects: Project[] = [
       frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
       backend: [PROJECT_SKILLS.supabase],
     },
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content() {
       return (
         <div>
@@ -612,6 +557,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.docker,
       ],
     },
+    resume: "https://drive.google.com/file/d/1--atfi8oaUfkmqYMyPxQUFTwcY2ic9FS/view?usp=drivesdk",
     get content() {
       return (
         <div>
